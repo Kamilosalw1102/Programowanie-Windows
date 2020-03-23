@@ -1,0 +1,8 @@
+x=input("Podaj liczbę: ")
+
+for i in x:
+    
+    c=x.count(i) #count zlicza ile razy liczba się powtarzają liczby w ciągu liczb x
+    
+    
+    print(str(i)+" występuje "+str(c)+" raz(y) ")
