@@ -1,0 +1,10 @@
+import re  #import biblioteki wyrażeń regularnych
+
+x=input()  #podaj ciąg znaków
+
+
+
+
+y=re.findall(('10{1,}1'), x)  # jeżeli w ciągu znaków x wartość zaczyna się i kończy na 1 a między nią jest co najmniej jedno 0
+
+print(len(y)) #wtedy wypisz ilość takich przypadków
