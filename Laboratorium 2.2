@@ -1,0 +1,67 @@
+import numpy 
+import random  #zaimportuj biblioteki do operacji na tablicach array i do losowania liczb
+
+wielkosc=int(input("Jakiej wielkosci mają być macierze kwadratowe?: "))
+
+m1=numpy.random.randint(-10,10, size=wielkosc*wielkosc)
+#tablica z wartosciami losowymi od -10 do 10, wartosci jest tyle, ile podał użytkownik do potęgi 2
+# gdyż tyle musi być własnie wartosci, by kolumn i wierszy było tyle samo
+print("         ")
+print("1 macierz: ")
+print("================")
+
+a=m1.reshape(wielkosc,wielkosc) #ustawiamy macierz, by miała tyle samo wierszy i kolumn
+print(a)
+########################################################
+
+m2=numpy.random.randint(-10,10,size=wielkosc*wielkosc) #to samo co poprzednio dla drugiej macierzy
+
+print("         ")
+print("2 macierz: ")
+print("================")
+
+b=m2.reshape(wielkosc,wielkosc)
+print(b)
+
+print("         ")
+print("Dodawanie tych macierzy: ")
+print("------------------------")
+
+dodawanie=a+b   #dodajemy 1 macierz z 2
+print(dodawanie)
+
+print("         ")
+print("Odejmowanie tych macierzy: ")
+print("------------------------")
+
+odejmowanie=a-b #odejmujemy
+print(odejmowanie)
+
+y=b.transpose() #transpozycja macierzy
+
+print("**************************")
+print("Mnożenie macierzy")
+
+if wielkosc==2:
+    tab=numpy.array([[(sum(a[0]*y[0])),(sum(a[1]*y[0]))],[(sum(a[0]*y[1])),(sum(a[1]*y[1]))]])
+if wielkosc==3:
+    tab=numpy.array([[(sum(a[0]*y[0])),(sum(a[1]*y[0])),(sum(a[2]*y[0]))],
+                     [(sum(a[0]*y[1])),(sum(a[1]*y[1])),(sum(a[2]*y[1]))],
+                     [(sum(a[0]*y[2])),(sum(a[1]*y[2])),(sum(a[2]*y[2]))]])
+    
+    
+if wielkosc==4:
+     tab=numpy.array([[(sum(a[0]*y[0])),(sum(a[1]*y[0])),(sum(a[2]*y[0])),(sum(a[3]*y[0]))],
+                      [(sum(a[0]*y[1])),(sum(a[1]*y[1])),(sum(a[2]*y[1])),(sum(a[3]*y[1]))],
+                      [(sum(a[0]*y[2])),(sum(a[1]*y[2])),(sum(a[2]*y[2])),(sum(a[3]*y[2]))],
+                      [(sum(a[0]*y[3])),(sum(a[1]*y[3])),(sum(a[2]*y[3])),(sum(a[3]*y[3]))]])
+    
+    
+if wielkosc==5:
+    tab=numpy.array([[(sum(a[0]*y[0])),(sum(a[1]*y[0])),(sum(a[2]*y[0])),(sum(a[3]*y[0])),(sum(a[4]*y[0]))],
+                      [(sum(a[0]*y[1])),(sum(a[1]*y[1])),(sum(a[2]*y[1])),(sum(a[3]*y[1])),(sum(a[4]*y[1]))],
+                      [(sum(a[0]*y[2])),(sum(a[1]*y[2])),(sum(a[2]*y[2])),(sum(a[3]*y[2])),(sum(a[4]*y[2]))],
+                      [(sum(a[0]*y[3])),(sum(a[1]*y[3])),(sum(a[2]*y[3])),(sum(a[3]*y[3])),(sum(a[4]*y[3]))],
+                      [(sum(a[0]*y[4])),(sum(a[1]*y[4])),(sum(a[2]*y[4])),(sum(a[3]*y[4])),(sum(a[4]*y[4]))]])
+
+print(tab.transpose())    
