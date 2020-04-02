@@ -1,0 +1,44 @@
+import random #import random do losowania liczby
+import math #import math do działań matematycznych
+
+
+x=int(input("Ile wartości ma mie  tablica?: ")) 
+tab=[]   #stworzona pusta tablica, do której zostaną dodane losowe wartosci
+q=random.randint(0,100) #losowanie wartosci z danego przedziału
+
+for x in range(q,q+x):  #dla x z przedziału od wylosowanej liczby do liczby większej
+#o podanej przez użytkownika    
+
+
+  tab.append(x) #dodaj wartosci do tablicy
+print(tab) #wypisz tablice
+
+średnia=(sum(tab)/len(tab)) #liczę srednią dzięki możliwosci sum, która sumuje wartosci
+#z tablicy "Tab" i len, która liczy ilosć wartosći
+print("Średnia wynosi",średnia) #wypisanie sredniej
+print("Wartość minimalna w tablicy wynosi ",(min(tab))) #wypisanie najmniejszej wartosci
+print("Wartość maksymalna w tablicy wynosi ",(max(tab))) #wypisane największej wartosci
+
+for i in tab:  #dla wartosci w tablicy
+  if (i>średnia):   #jeżeli wartosci są większe od sredniej
+    print("Wartość większa od średniej to",(i)) #wypisz je
+  elif(i<średnia): #jeżeli są mniejsze
+    print("Wartość mniejsza od średniej to",(i)) #wypisz mniejsze  
+
+
+i=-1          
+suma=0
+
+
+while i<x:  #dopóki i jest mniejsze niż wielkosc tablicy podanej przez użytkownika
+    
+    i+=1 #zwiększaj i o 1
+    odchylenie=math.sqrt(pow(tab[i]-średnia,2)/x) #dzięki bibliotece math liczę pierwiastek
+    # z drugiej potęgi różnicy wartosci z tabeli i sredniej
+    suma+=odchylenie #dodaj do siebie te wartosci
+    print("----------")
+    print("Suma:",suma) #wypisz te wartosci
+    
+
+
+ 
