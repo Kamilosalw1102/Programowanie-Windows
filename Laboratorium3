@@ -1,0 +1,44 @@
+class RGB():
+    def __init__(self,r_value,g_value,b_value): #konstruktor
+        self.r_value=r_value
+        self.g_value=g_value
+        self.b_value=b_value
+    def get_value(self):
+        return (self.r_value,self.g_value,self.b_value) #get
+       
+    def set_value(self,ustR,ustG,ustB): #setterf
+        self.r_value=ustR
+        self.g_value=ustG
+        self.b_value=ustB
+        
+    def toString(self):
+        print(f"Kolory {self.r_value} {self.g_value}  {self.b_value}.") #wypisanie
+class RGBController():
+    def __init__(self,r_value,g_value,b_value):
+        self.r_value=r_value
+        self.g_value=g_value
+        self.b_value=b_value
+
+    def inicjalizacja(self,zestaw,zestaw1):
+        (self.r_value,self.g_value,self.b_value)=zestaw #składowe barw
+        (self.b_value,self.r_value,self.g_value)=zestaw1
+
+    def mieszanie(self,miesz):
+        ((self.r_value,self.g_value),(self.g_value,self.b_value),(self.b_value,self.r_value))=miesz #metoda mieszająca
+       
+        
+   
+kolor=RGB(64,32,255) #podanie wartoci do konstruktora
+kolor.toString() #wypisanie
+
+
+
+kol=RGBController(32,54,34)
+kol.mieszanie
+
+print(f"Wiek Adama sprzed urodzin: {kol.inicjalizacja}")
+print(kolor.get_value())
+kolor.set_value(21,43,65) #ustawienie innych wartosci
+kolor.toString() #wypisanie wartosci podanych w setterze
+
+print(kol.mieszanie)
